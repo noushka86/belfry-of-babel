@@ -1,12 +1,15 @@
 import React from 'react';
 import ChatBoard from '/client/components/chat/ChatBoard.jsx';
 
-export default React.createClass({
+class App extends React.Component {
   render() {
-    return(
+    return (
       <div>
         <ChatBoard />
       </div>
-    )
-  },
-});
+    );
+  }
+}
+
+App.displayName = 'App';
+export default App;
