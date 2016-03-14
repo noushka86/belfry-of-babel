@@ -19,6 +19,7 @@ insecure                # Allow all DB writes from clients (for prototyping)
 standard-minifier-css
 standard-minifier-js
 # kadira:flow-router
-# cosmos:browserify
+cosmos:browserify
 # react
-# modules
+ #modules
+aldeed:simple-schema

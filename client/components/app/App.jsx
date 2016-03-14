@@ -1,10 +1,11 @@
 import React from 'react';
+import ChatBoard from '/client/components/chat/ChatBoard.jsx';
 
 export default React.createClass({
-  render(){
+  render() {
     return(
       <div>
-        Hello World!
+        <ChatBoard />
       </div>
     )
   },
