@@ -1,0 +1,25 @@
+{
+  "name": "belfry-of-babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-mounter": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noushka86/belfry-of-babel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noushka86/belfry-of-babel/issues"
+  },
+  "homepage": "https://github.com/noushka86/belfry-of-babel#readme"
+}
