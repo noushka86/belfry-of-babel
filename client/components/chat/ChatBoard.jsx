@@ -4,15 +4,12 @@ class ChatBoard extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      post: null,
-    };
     this.submitPost = this.submitPost.bind(this);
   }
 
   submitPost(e) {
     e.preventDefault();
-    const form = document.getElementById('form-post');
+    const form = document.getElementById('post-form');
     const postInput = document.getElementById('post');
     const text = postInput.value;
 
@@ -27,10 +24,16 @@ class ChatBoard extends React.Component {
     });
   }
 
+
   render() {
     return (
       <div>
         <div id="chat-board">
+        {
+          this.props.posts.map((post, index) => {
+            return (<p key={index}>{post.text}</p>)
+          })
+        }
         </div>
         <form id="post-form" onSubmit={this.submitPost}>
           <input id="post" type="text"/>

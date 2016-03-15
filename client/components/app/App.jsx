@@ -1,11 +1,11 @@
 import React from 'react';
-import ChatBoard from '/client/components/chat/ChatBoard.jsx';
+import ChatBoardContainer from '/client/components/chat/ChatBoardContainer.jsx';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <ChatBoard />
+        <ChatBoardContainer />
       </div>
     );
   }
