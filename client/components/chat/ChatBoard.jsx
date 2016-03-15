@@ -17,23 +17,31 @@ class ChatBoard extends React.Component {
       return 'Error';
     }
 
-    Meteor.call('Posts.insertAndTranslate', text, (err) => {
+    Meteor.call('Posts.insert', text, (err) => {
       if (!err) {
         form.reset();
       }
     });
   }
 
+  renderPosts(posts) {
+    console.log(posts)
+    if (posts) {
+      return posts.map((post, index) => {
+        return (
+          <p key={index}>{post.text}</p>
+        );
+      });
+    }
+    return <div/>;
+  }
 
   render() {
+    console.log(this.props)
     return (
       <div>
         <div id="chat-board">
-        {
-          this.props.posts.map((post, index) => {
-            return (<p key={index}>{post.text}</p>)
-          })
-        }
+        { this.renderPosts(this.props.translatedPosts) }
         </div>
         <form id="post-form" onSubmit={this.submitPost}>
           <input id="post" type="text"/>
@@ -43,5 +51,8 @@ class ChatBoard extends React.Component {
   }
 }
 
+ChatBoard.propTypes = {
+  posts: React.PropTypes.array,
+};
 ChatBoard.displayName = 'ChatBoard';
 export default ChatBoard;

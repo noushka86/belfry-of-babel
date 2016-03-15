@@ -5,7 +5,14 @@ function composer(props, onData) {
   const subscription = Meteor.subscribe('posts');
   if (subscription.ready()) {
     const posts = Posts.find().fetch();
-    onData(null, { posts });
+    let translatedPosts;
+    Meteor.call('translate', posts, (err, success) => {
+      if (!err) {
+        translatedPosts = success;
+        console.log(success)
+      }
+    });
+        onData(null, { translatedPosts });
   }
 }
 

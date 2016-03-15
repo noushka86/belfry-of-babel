@@ -8,7 +8,7 @@ Posts.attachSchema(new SimpleSchema({
 
 
 Meteor.methods({
-  'Posts.insertAndTranslate'(text) {
+  'Posts.insert'(text) {
     if (typeof text !== 'string') {
       throw new Error;
     }
