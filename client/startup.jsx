@@ -1,6 +1,9 @@
-import App from './components/app/App.jsx';
+import Manager from './components/chat/Manager.jsx';
 import { mount } from 'react-mounter';
 
 Meteor.startup(() => {
-  mount(App, {});
+  mount(
+    Manager,
+    {}
+  );
 });
