@@ -27,7 +27,7 @@ import { connect } from 'redux'
     );
   }
 }
-App.contextTypes = {
+  App.contextTypes = {
   store: React.PropTypes.object,
 };
 
