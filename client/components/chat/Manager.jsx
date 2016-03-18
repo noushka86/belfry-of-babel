@@ -9,17 +9,22 @@ import chatApp from '/client/reducer/reducer.jsx';
 class Manager extends React.Component {
 
   componentDidMount() {
-    store.dispatch({ type: 'SET_VISIBLE_COMPONENT', component: 'Login' })
+    store.dispatch({ type: 'SET_VISIBLE_COMPONENT', component: 'Login' });
+  }
+
+  renderComponent() {
+    return store.getState();
   }
 
   render() {
     return (
       <Provider store={store}>
-        <App component={store.getState()}/>
+        <App component={ this.renderComponent()}/>
       </Provider>
     );
   }
 }
+
 
 Manager.displayName = 'Manager';
 export default Manager;

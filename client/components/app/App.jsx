@@ -2,9 +2,16 @@ import React from 'react';
 import ChatBoardContainer from '/client/components/chat/ChatBoardContainer.jsx';
 import Login from '/client/components/auth/Login.jsx'
 import { connect } from 'redux'
-  connect('mapStateToProps')
+
 
   class App extends React.Component {
+    componentDidMount() {
+      const { store  } = this.context;
+      const state = store.getState();
+       const mapState = (state) => {
+         console.log(state);
+       };
+    }
   render() {
      const component = this.props.component;
      console.log(this.props)
@@ -12,7 +19,7 @@ import { connect } from 'redux'
       <div>
       {
         this.props.component === "Login" ?
-          <Login />
+          <Login store={this.context}/>
         :
           <ChatBoardContainer />
       }
@@ -20,6 +27,10 @@ import { connect } from 'redux'
     );
   }
 }
+App.contextTypes = {
+  store: React.PropTypes.object,
+};
+
 
 App.displayName = 'App';
 export default App;
